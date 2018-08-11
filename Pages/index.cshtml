@@ -1,0 +1,19 @@
+﻿@using Xs.RazorHost.Core
+@functions{
+    [AllowAnonymous]
+    public void main()
+    {
+        ViewBag.title = "RazorPage for .NetFrameWork";
+       
+        // login_url = "";
+    }
+    
+    [AllowAnonymous]
+    public dynamic getdate(string tel)
+    {
+        return System.DateTime.Now;
+    }
+}
+
+<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<div class="well"><a href="default" target="_blank">RazorPage 支持文档</a></div>

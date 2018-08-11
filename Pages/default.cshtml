@@ -1,0 +1,88 @@
+﻿@using Xs.RazorHost.Core
+@functions{
+    [AllowAnonymous]
+    public void main()
+    {
+        ViewBag.title = "RazorPage for .NetFrameWork  ";
+    }
+    
+    [AllowAnonymous]
+    public dynamic getdate()
+    {
+        return System.DateTime.Now;
+    }
+}
+
+ <style>
+        table{table-layout:fixed;}
+    </style>
+ <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <div class="container">
+        <h2>RazorPage说明文档</h2>
+        <p>命令支持:</p>            
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>命令</th>
+                    <th>vs code 命令行</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>server.bat</td>
+                    <td>启动iis express ，具体设置可修改server.bat</td>
+                </tr>
+                <tr>
+                    <td>rest.ext -d -c</td>
+                    <td>生成restful接口，-d数据库类型[mssql] -c数据库链接[webconfig配置]</td>
+                </tr>
+                 
+            </tbody>
+        </table>
+
+        <p>函数支持:</p> 
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>函数</th>
+                    <th>razor 代码</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>执行sql脚本</td>
+                    <td>new mssql("mssql:default").query(sql, new {  });</td>
+                </tr>
+                 <tr>
+                    <td>查询函数</td>
+                    <td>new mssql("mssql:default").get(tablename, objectJson);</td>
+                </tr>
+                 <tr>
+                    <td>新增函数</td>
+                    <td>new mssql("mssql:default").post(tablename, objectJson);</td>
+                </tr>
+                <tr>
+                    <td>修改函数</td>
+                    <td>new mssql("mssql:default").put(tablename,pkname, objectJson);</td>
+                </tr>
+                <tr>
+                    <td>删除函数</td>
+                    <td>new mssql("mssql:default").delete(tablename, objectJson);</td>
+                </tr>
+
+                <tr>
+                    <td>阿里云短信</td>
+                    <td>new aliyun("ak", "sk").sms(tel, signName,template,param);</td>
+                </tr>
+
+                <tr>
+                    <td>阿里云注册验证码</td>
+                    <td>string code = new aliyun("ak", "sk").sms_register(tel, signName);</td>
+                </tr>
+                <tr>
+                    <td>七牛token</td>
+                    <td>string code = new qiniu("ak", "sk").token(bulket);</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
